@@ -1,0 +1,28 @@
+# Cable-Driven Robot LM End-Effector Localization
+
+This project implements a **Levenberg–Marquardt solver** for pose optimization of a cable-driven parallel robot end-effector.  
+It includes both:
+
+- **Solver (MATLAB)** — core nonlinear least-squares optimization.
+- **Web Frontend (Next.js, TypeScript, GraphQL, Prisma)** — an interactive UI to run optimization, visualize results, and track runs.
+
+## Features
+- Nonlinear optimization with MATLAB backend (`optimize_from_json.m`, `optimize_pose.m`).
+- Web wrapper built in Next.js with GraphQL API integration.
+- Interactive dashboard showing:
+  - Error per iteration graph
+  - Final pose vector
+  - Run history storage
+- Modular structure (`solver/`, `web/`).
+
+## Tech Stack
+- **MATLAB** — numerical optimization
+- **TypeScript** / **Next.js** — frontend & API
+- **GraphQL** — data querying
+- **Prisma** — database ORM
+- **React + Recharts** — visualization
+
+## Usage
+1. Clone repo:
+   ```bash
+   git clone https://github.com/AlexZixuanLi7010/Cable-Driven-Robot-LM-End-Effector-Localization.git
