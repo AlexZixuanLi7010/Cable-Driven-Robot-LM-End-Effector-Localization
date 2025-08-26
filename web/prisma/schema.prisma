@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Run {
+  id         String    @id @default(cuid())
+  createdAt  DateTime  @default(now())
+  inputJson  Json
+  resultJson Json?
+  status     RunStatus @default(PENDING)
+  notes      String?
+}
+
+enum RunStatus {
+  PENDING
+  SUCCESS
+  FAILED
+}
